@@ -58,7 +58,11 @@ unetModel <- createUnetModel3D( c( resampledImageSize, channelSize ),
 
 cat( "Loading weights file" )
 startTime <- Sys.time()
-weightsFileName <- getPretrainedNetwork( "wholeTumorSegmentationT2Flair" )
+weightsFileName <- paste0( getwd(), "/wholeTumorSegmentationT2FlairWeights.h5" )
+if( ! file.exists( weightsFileName ) )
+  {
+  weightsFileName <- getPretrainedNetwork( "wholeTumorSegmentationT2Flair", weightsFileName )
+  }
 load_model_weights_hdf5( unetModel, filepath = weightsFileName )
 endTime <- Sys.time()
 elapsedTime <- endTime - startTime
