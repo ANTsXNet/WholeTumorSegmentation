@@ -2,6 +2,12 @@
 
 Deep learning app made for MRI (T2 + FLAIR) brain tumor segmentation using ANTsRNet
 
+## Prerequisites
+
+* [R](https://www.r-project.org) installation
+* [ANTsR](https://github.com/ANTsX/ANTsR) installation
+* [ANTsRNet](https://github.com/ANTsX/ANTsRNet) installation
+
 ## Model training notes
 
 * Training data: BRATS 2014
